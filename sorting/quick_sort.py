@@ -1,12 +1,4 @@
-#Appears to be working
-
-from random import choice
-
-#l = [6, 5, 3, 1, 8, 7, 2, 4]
-
-#l = [6, 5, 9, 3]
-
-from random import shuffle
+from random import choice, shuffle
 l = range(-110, 110)
 shuffle(l)
 
