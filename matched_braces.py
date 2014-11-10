@@ -25,28 +25,31 @@ expressions: [ ")(){}", "[]({})", "([])", "{()[]}", "([)]" ]
 0
 '''
 
-def check_braces(expressions):
+def check_braces(expression):
 	open_braces = ['(', '[', '{']
 	closed_braces = [')', ']', '}']
-	for expression in expressions:
-		print
-		print expression
-		q = []
-		for char in expression:
-			if char in open_braces:
-				q.append(char)
-			else:
-				if len(q) == 0:
-					print 0 
-					break 
-				elif closed_braces.index(char) != open_braces.index(q.pop()):
-					print 0
-					break 
-		else:
-			print 1
+
+	q = [] 
+
+	for char in expression:
+		
+		if char in open_braces: # Push the stack
+			q.append(char)
+
+		else: # It's a closed brace.
+			
+			if len(q) == 0: # First bracket closed/extra closed brackets
+				return 0 
+			
+			if closed_braces.index(char) != open_braces.index(q.pop()):
+				return 0
+
+	else:
+		return 1
 
 
 expressions = [ ")(){}", "[]({})", "([])", "{()[]}", "([)]" ]
 
-check_braces(expressions)
+for expression in expressions:
+	print check_braces(expression)
 
