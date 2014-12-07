@@ -10,14 +10,13 @@ not_unique2 = "abcdefghijkc"
 
 
 def test_uniqueness(s):
-	'''Determines whether a string has all unique characters --
-	without using additional data structures.'''
-	for i, char in enumerate(s): 
-		for subchar in s[i+1:] :
-			if subchar == char:
-				return "Not unique"
-	else:
-		return "Unique"
+    '''Determines whether a string has all unique characters --
+    without using additional data structures.'''
+    for i, char in enumerate(s): 
+        for subchar in s[i+1:] :
+            if subchar == char:
+                return "Not unique"
+    return "Unique"
 
 
 print test_uniqueness(unique)
