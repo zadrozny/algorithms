@@ -7,7 +7,7 @@ import os
 
 def depth_first(children=None, stack=[]):
     '''
-    Perform a depth-first search / walkthrough on a directory (containing only directories, no files). The first 
+    Perform a depth-first search / walkthrough on a directory (containing only directories, no files).
     '''
 
     children = [children + '/' + c for c in os.listdir(children)]
